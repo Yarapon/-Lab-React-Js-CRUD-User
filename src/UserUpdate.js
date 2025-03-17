@@ -51,7 +51,7 @@ export default function UserUpdate() {
     .then(res => res.json())
     .then(result => {
       if (result['affectedRows'] >= 1) {
-        alert('The user has been updated successfully!'); // แสดงข้อความเมื่ออัปเดตสำเร็จ
+        alert('แก้ไขผู้ใช้สำเร็จ'); // แสดงข้อความเมื่ออัปเดตสำเร็จ
         navigate('/'); // Redirect to the user list page after successful update
       }
       setOpenDialog(false); // ปิด Dialog
@@ -130,16 +130,16 @@ export default function UserUpdate() {
 
       {/* Dialog สำหรับยืนยันการอัปเดต */}
       <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
-        <DialogTitle>Confirm Update</DialogTitle>
+        <DialogTitle>ยืนยันการอัปเดต</DialogTitle>
         <DialogContent>
-          <Typography>Are you sure you want to update this user?</Typography>
+          <Typography>คุณแน่ใจว่าต้องการอัพเดตผู้ใช้รายนี้หรือไม่</Typography>
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpenDialog(false)} color="primary">
-            Cancel
+          ยกเลิก
           </Button>
           <Button onClick={confirmUpdate} color="primary">
-            Confirm
+          ยืนยัน
           </Button>
         </DialogActions>
       </Dialog>
